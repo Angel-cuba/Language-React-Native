@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import Layout from './Layout'
+import Layout from './Layouts/Layout'
 
 const HomeScreen = () => {
 

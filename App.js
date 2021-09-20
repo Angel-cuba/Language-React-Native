@@ -31,7 +31,13 @@ export default function App() {
                                 )
             })
           }/>
-          <Stack.Screen name="Content" component={Content} />
+          <Stack.Screen name="Content" component={Content} options={{
+            headerStyle: { backgroundColor: 'crimson'},
+            headerTitleStyle: { color: 'silver', fontWeight: 'bold'},
+            headerTintColor: 'silver',
+            title: '👀 This is the content side'
+
+          }} />
        
         </Stack.Navigator>
     </NavigationContainer>
