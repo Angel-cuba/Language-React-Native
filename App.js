@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -33,18 +33,15 @@ export default function App() {
           }/>
           <Stack.Screen name="Content" component={Content} options={{
             headerStyle: { backgroundColor: 'crimson'},
-            headerTitleStyle: { color: 'silver', fontWeight: 'bold'},
-            headerTintColor: 'silver',
+            headerTitleStyle: { color: '#ffcfdf', fontWeight: 'bold'},
+            headerTintColor: '#1d2951',
             title: '👀 This is the content side'
-
           }} />
-       
         </Stack.Navigator>
     </NavigationContainer>
    
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {

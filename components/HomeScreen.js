@@ -42,13 +42,18 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
      textContainer:{
           color: 'black',
-          paddingBottom: 40,
+          paddingBottom: 4,
           letterSpacing: 1,
-          width: '50%',
+          width: '90%',
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-around',
           alignItems: 'center',
+          borderWidth: .51,
+          marginBottom: 49,
+          backgroundColor: 'silver',
+          borderRadius: 6,
+
      },
      text: {
           color: 'black',

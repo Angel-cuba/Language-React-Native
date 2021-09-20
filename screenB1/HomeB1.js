@@ -1,11 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import ContentLayout from '../components/Layouts/ContentLayout'
+
 
 const HomeB1 = () => {
 	return (
-		<View>
+		<ContentLayout>
 			<Text>Home B1</Text>
-		</View>
+		</ContentLayout>
 	);
 };
 

@@ -6,6 +6,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 // import { BlurView } from 'expo-blur';
+//Importing Icons library
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import HomeA1 from '../screensA1/HomeA1'
 import HomeA2 from '../screensA2/HomeA2'
@@ -31,8 +33,10 @@ const Content = () => {
             : options.title !== undefined
             ? options.title
             : route.name;
-
+         const tabLabel = route.name
+     //     console.log(tabLabel)
         const isFocused = state.index === index;
+     //    console.log(isFocused)
 
         const onPress = () => {
           const event = navigation.emit({
@@ -46,7 +50,7 @@ const Content = () => {
             navigation.navigate({ name: route.name, merge: true });
           }
         };
-
+        
         const onLongPress = () => {
           navigation.emit({
             type: 'tabLongPress',
@@ -66,9 +70,13 @@ const Content = () => {
             key={route.key}
           >
             <Text style={{
-                  color: isFocused ? '#a71d31' : 'blue', 
+                  color: isFocused ? '#b02e0c' : '#09203f', 
+                  ...styles.bottomTabColor
                   }}>
-                 <Text style={styles.labeltext}>
+                       <Text>
+                           <MaterialCommunityIcons name={tabLabel.toLowerCase()} size={40} />    
+                       </Text>
+                     <Text style={styles.labeltext}> 
                        {label}
                  </Text>
              
@@ -83,25 +91,62 @@ const Content = () => {
 
         <BottomTab.Navigator tabBar={props => <MyTabBar {...props} />}>
      
-          <BottomTab.Screen name="HomeA1" component={HomeA1} options={{
+          <BottomTab.Screen name="Bone" component={HomeA1} options={{
                headerStyle: {
-                     backgroundColor: 'green',
+                     backgroundColor: '#233329',
                       },
                       headerTitleStyle: {
                            fontWeight: 'bold'
                       },
-               title: 'First level',
+               title: 'Primera',
                headerTintColor: 'white',
                headerRight: () => (
-                                   <Text style={styles.text}>A1r 🐢</Text>
+                                   <Text style={styles.text}>A1 🐢</Text>
                                )
                
-
-
           }}/>
-          <BottomTab.Screen name="HomeA2" component={HomeA2}/>
-          <BottomTab.Screen name="HomeB1" component={HomeB1}/>
-          <BottomTab.Screen name="HomeB2" component={HomeB2}/>
+          <BottomTab.Screen name="Bike-fast" component={HomeA2} options={{
+               headerStyle: {
+                     backgroundColor: '#233329',
+                      },
+                      headerTitleStyle: {
+                           fontWeight: 'bold'
+                      },
+               title: 'Primera',
+               headerTintColor: 'white',
+               headerRight: () => (
+                                   <Text style={styles.text}>A2 🐭</Text>
+                               )
+               
+          }}/>
+          <BottomTab.Screen name="Run-fast" component={HomeB1}  options={{
+               headerStyle: {
+                     backgroundColor: '#233329',
+                      },
+                      headerTitleStyle: {
+                           fontWeight: 'bold'
+                      },
+               title: 'Primera',
+               headerTintColor: 'white',
+               headerRight: () => (
+                                   <Text style={styles.text}>B1 🐾</Text>
+                               )
+               
+          }}/>
+          <BottomTab.Screen name="Lastpass" component={HomeB2} options={{
+               headerStyle: {
+                     backgroundColor: '#233329',
+                      },
+                      headerTitleStyle: {
+                           fontWeight: 'bold'
+                      },
+               title: 'Primera',
+               headerTintColor: 'white',
+               headerRight: () => (
+                                   <Text style={styles.text}>B2 🕸</Text>
+                               )
+               
+          }}/>
 
 
         </BottomTab.Navigator>
@@ -110,7 +155,7 @@ const Content = () => {
 }
 const styles = StyleSheet.create({
      text: {
-          color: 'yellow',
+          color: '#ee9617',
           fontWeight: 'bold',
           marginRight: 30,
           fontSize: 40
@@ -122,32 +167,40 @@ const styles = StyleSheet.create({
           right: 6,
           flexDirection: 'row', 
           justifyContent: "center",
-          backgroundColor: 'white', 
-          borderTopColor: 'transparent',
-          height: 60,
-          paddingLeft: 20,
+          backgroundColor: '#ffcfdf', 
+          borderTopWidth: 1,
+          borderTopColor: 'rgba(0,0,0,.11234)',
+          borderLeftWidth: 7,
+          borderLeftColor: 'rgba(0,0,0,.0234)',
+          borderRightWidth: 7,
+          borderRightColor: 'rgba(0,0,0,.0234)',
+          height: 70,
+          paddingLeft: 8,
           paddingTop: 18,
           borderRadius: 4,
           // Shadows
-          shadowColor: 'red',
+          shadowColor: 'green',
           shadowOffset:{
-               width: 10,
+               width: 0,
                height: 14
           },
-          shadowOpacity: 0.25,
+          shadowOpacity: 0.5,
           shadowRadius: 5,
-          elevation: 8
+          elevation: 10
      },
      labeltext:{
-          //  width: '80%', 
-          fontSize: 15,
+          fontSize: 10,
           fontWeight: 'bold',
           paddingLeft: 20,
+          display: 'flex',
+          flexDirection: 'column',
      },
      bottomTabColor:{
-          backgroundColor: 'red',
-          color: 'blue',
-     }
+          display: 'flex',
+          justifyContent: 'flex-start',
+          flexDirection: 'column-reverse'
+          
+     },
 })
 
 export default Content
