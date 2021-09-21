@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
      container: {
              backgroundColor: '#fb8085',
              height: '100%',
-               padding: 10,
+               // padding: 10,
      },
          text:{
                textAlign: 'right',

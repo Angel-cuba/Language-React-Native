@@ -93,7 +93,7 @@ const Content = () => {
      
           <BottomTab.Screen name="Bone" component={HomeA1} options={{
                headerStyle: {
-                     backgroundColor: '#233329',
+                     backgroundColor: '#a71d31',
                       },
                       headerTitleStyle: {
                            fontWeight: 'bold'
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
      },
      bottomTab: {
           position: 'absolute',
-          bottom: 16,
+          bottom: 6,
           left: 6,
           right: 6,
           flexDirection: 'row', 
@@ -174,10 +174,10 @@ const styles = StyleSheet.create({
           borderLeftColor: 'rgba(0,0,0,.0234)',
           borderRightWidth: 7,
           borderRightColor: 'rgba(0,0,0,.0234)',
-          height: 70,
+          height: 50,
           paddingLeft: 8,
-          paddingTop: 18,
-          borderRadius: 4,
+          paddingTop: 3,
+          borderRadius: 14,
           // Shadows
           shadowColor: 'green',
           shadowOffset:{
